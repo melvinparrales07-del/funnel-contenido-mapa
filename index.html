@@ -97,6 +97,7 @@
   .template-box .t-step::before { content: "→"; position: absolute; left: -2px; color: var(--purple); }
   .template-box .cta-line { margin-top: 10px; font-size: 11.5px; color: var(--teal-text); font-weight: 600; }
   .template-box .pending { background: #1a1414; border: 1px dashed #791F1F; color: #F09595; font-size: 11px; padding: 8px 12px; border-radius: 6px; margin-top: 10px; }
+  .template-box .verbatim { background: #0d0d14; border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; font-size: 12.5px; color: #cfcfe0; line-height: 1.8; white-space: pre-wrap; }
   .copy-tpl-btn { margin-top: 12px; }
 
   .formato-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
@@ -392,7 +393,8 @@ const ANGULOS = {
         'Contraste: acción contraproducente y su consecuencia',
         'Payoff: causa real revelada (no la obvia)',
         'CTA: acción correcta en el momento trigger específico'
-      ]}
+      ],
+      template:'Nunca más vas a [COMPORTAMIENTO COMÚN NEGATIVO] después de escuchar esto. [INSTITUCIÓN] lo llama [TÉRMINO TÉCNICO/NOMBRE IMPACTANTE]. Cada vez que [ACCIÓN HABITUAL] tu [PARTE DEL SISTEMA] ya [ESTADO ÓPTIMO], pero [ACCIÓN CONTRAPRODUCENTE]. Y eso es justamente lo que [INSTITUCIÓN] descubrieron: cuando [ACCIÓN], tu [SISTEMA] empieza [PROCESO] que [CONSECUENCIA]. Y si [ACCIÓN HABITUAL], estás [CONSECUENCIA] y vas a [RESULTADO NEGATIVO PEOR QUE EL PROBLEMA ORIGINAL]. Ese [SÍNTOMA QUE SIENTEN] no es por [CAUSA OBVIA], sino por [CAUSA REAL RECIÉN REVELADA]. Así que [MOMENTO ESPECÍFICO], cuando [TRIGGER], [ACCIÓN CORRECTA] y vas a terminar agradeciendo a [INSTITUCIÓN].' }
   ],
   nutricion: [
     { id:'vinculacion', name:'Vinculación', desc:'Libre, sin plantilla fija. Compartís algo tuyo.', cta:'Opcional — puede no llevar CTA de recurso',
@@ -405,15 +407,16 @@ const ANGULOS = {
         'Prueba: cliente, antes/después, resultado medible en X tiempo',
         '3 objeciones superadas',
         'Recurso gratuito + CTA'
-      ]},
+      ],
+      template:'Deja de [PRÁCTICA COMÚN QUE TU AUDIENCIA HACE]. Porque [CONSECUENCIA NEGATIVA]. [JUSTIFICACIÓN DEL ERROR] [SOLUCIÓN ÚNICA JUSTIFICADA] Esto es exactamente lo que hizo [NOMBRE DEL CLIENTE], que pasó de [SITUACIÓN ANTES] a [SITUACIÓN DESPUÉS] y [RESULTADO ESPECÍFICO MEDIBLE] en solo [TIEMPO]. Y lo más interesante es que [OBJECIÓN 1 QUE SUPERÓ], [OBJECIÓN 2], y [OBJECIÓN 3]. Cómo [PASO CLAVE 1], cómo [PASO CLAVE 2] y cómo [PASO CLAVE 3] lo explico en [NOMBRE DEL RECURSO GRATUITO], y cómo tú, [IDENTIFICADOR DE AUDIENCIA], puedes [TRANSFORMACIÓN PROMETIDA]. Comenta \'[PALABRA]\' y te lo envío al instante antes de que [URGENCIA/ESCASEZ].' },
     { id:'epifania', name:'Epifanía (gancho Xavier)', desc:'Leés la mente del avatar con una frustración muy específica.', cta:'"Comentá [palabra] y te lo envío"',
-      pending:'Pendiente: definir texto exacto de la plantilla con Marcos',
       steps:[
         'Leé la mente del avatar: frustración muy específica (no genérica)',
         'Desarrollá el problema: por qué eso es un problema',
         'Cambiá la perspectiva',
         'Prueba → Recurso'
-      ]},
+      ],
+      template:'[SITUACIÓN ESPECÍFICA QUE VIVE TU PROSPECTO] porque [PRÁCTICA COMÚN]. [RAZÓN REAL DEL PROBLEMA]. Y esto sucede porque [CAUSA RAÍZ]. Lo que tienes que hacer es [NUEVA SOLUCIÓN]. Porque [JUSTIFICACIÓN LÓGICA]. [YO / NOMBRE DE CLIENTE] estaba [SITUACIÓN ANTES]. Y después de aplicar esto [RESULTADO ESPECÍFICO + TIEMPO]. Tengo [TIPO DE RECURSO] donde te muestro [BENEFICIO PRINCIPAL]. Para que puedas [RESULTADO]. Comenta \'[PALABRA]\' y te lo envío antes de que [URGENCIA/ESCASEZ].' },
     { id:'transformacion', name:'Transformación viral', desc:'"Así pasé de X a Y" — tu historia o la de un cliente.', cta:'"Comentá [palabra] y te lo envío"',
       steps:[
         'Gancho storytelling: "así pasé de X a Y"',
@@ -421,7 +424,8 @@ const ANGULOS = {
         'Situación actual (vívida)',
         '3 pasos novedosos y detallados (cuanto más único, mejor)',
         'Inspiración: "si tú también... podés lograrlo"'
-      ]}
+      ],
+      template:'Así pasé de [SITUACIÓN ACTUAL] a [DESEADA] // Tenía [PROBLEMA QUE RESUENE CON EL AVATAR]. Y estaba pasando por [MOMENTO DIFÍCIL EMOCIONAL]. [DESCRIPCIÓN VÍVIDA DE LA SITUACIÓN PASADA, INTERNA Y EXTERNA] Hoy [DESCRIPCIÓN VÍVIDA DE LA SITUACIÓN ACTUAL]. ¿Qué hice para lograr este cambio? [PASO 1 NOVEDOSO Y DETALLADO] [PASO 2] [PASO 3] Si tienes [SITUACIÓN DEL LECTOR], no hay razón por la cual no puedas [RESULTADO DESEADO].' }
   ],
   conversion: [
     { id:'promesa', name:'Promesa', desc:'Llamado directo a tu cliente ideal con escasez legítima.', cta:'"Comentá y te escribo"',
@@ -432,8 +436,10 @@ const ANGULOS = {
         'Tangible: tiempo en el que entregás el resultado',
         'Prueba (opcional): resultados que estás obteniendo',
         'CTA: comentá'
-      ]},
+      ],
+      template:'Busco X [PERSONA] para llevarlos personalmente a [RESULTADO] en [TIEMPO]. Implementando [PROCESO] que ha generado [PRUEBA SOCIAL]. Comenta "YO" y te cuento cómo funciona.' },
     { id:'prueba_social', name:'Prueba social', desc:'Resultados tuyos o de un cliente, narrado o en clip.', cta:'"Comentá y te cuento cómo"',
+      pending:'Falta el texto literal de esta plantilla (Marcos la tiene más larga, con estructura de testimonio) — pasámela y la agrego.',
       steps:[
         'Gancho: qué se logró (el resultado)',
         'Contexto: qué hacía la persona',
@@ -444,6 +450,7 @@ const ANGULOS = {
         'CTA: comentá para trabajar juntos'
       ]},
     { id:'objeciones', name:'Objeciones', desc:'Reconocés y desarmás la objeción más común de tu audiencia.', cta:'"Comentá"',
+      pending:'Falta el texto literal de esta plantilla (Marcos la tiene más larga, con estructura de romper creencias) — pasámela y la agrego.',
       steps:[
         'Gancho: mencionar/reconocer la objeción en primera persona',
         'Controversia: desafiarla',
@@ -461,7 +468,8 @@ const ANGULOS = {
         'Escasez de cupos o tiempo',
         'Prueba: resultados que estás obteniendo',
         'CTA: comentá'
-      ]}
+      ],
+      template:'Atención [NICHO] que quieren [RESULTADO] a través de [MÉTODO]. Quedan solo X días antes de que [ESCASEZ]. Comenta "YO" y te escribo. Hemos [PRUEBA SOCIAL].' }
   ]
 };
 
@@ -643,7 +651,11 @@ function buildAnguloGrid(){
     box.innerHTML = `
       <div class="template-box">
         <div class="t-title" style="font-weight:700;font-size:13px;margin-bottom:8px">Plantilla: ${chosen.name}</div>
-        ${chosen.steps.map(s => `<div class="t-step">${s}</div>`).join('')}
+        ${chosen.template ? `<div class="verbatim">${escapeHtml(chosen.template)}</div>` : ''}
+        <details class="info" style="margin-top:${chosen.template ? '12px' : '0'}">
+          <summary>${chosen.template ? 'Ver estructura en pasos' : 'Estructura en pasos'}</summary>
+          <div class="content">${chosen.steps.map(s => `<div class="t-step">${s}</div>`).join('')}</div>
+        </details>
         <div class="cta-line">CTA sugerido: ${chosen.cta}</div>
         ${chosen.pending ? `<div class="pending">${chosen.pending}</div>` : ''}
       </div>`;
@@ -695,6 +707,9 @@ function buildPrompt(){
   const anguloObj = state.capa && state.angulo ? ANGULOS[state.capa].find(a=>a.id===state.angulo) : null;
   if (!anguloObj) return 'Completá los pasos anteriores para generar el prompt.';
   const capaLabel = CAPA_INFO[state.capa].label;
+  const plantillaTexto = anguloObj.template
+    ? anguloObj.template
+    : anguloObj.steps.map((s,i)=>`${i+1}. ${s}`).join('\n') + `\nCTA: ${anguloObj.cta}`;
   return `Completa esta plantilla con el objetivo de hacer un reel de ${capaLabel.toLowerCase()} con ángulo de ${anguloObj.name.toLowerCase()}. Dame 5 guiones.
 
 Idea/tema: ${state.idea || '(sin especificar)'}
@@ -703,8 +718,7 @@ Gancho principal a usar: ${state.hook || '(sin especificar)'}
 Lead magnet a entregar: ${state.leadMagnet ? state.leadMagnet.name : '(sin especificar)'}
 
 Plantilla:
-${anguloObj.steps.map((s,i)=>`${i+1}. ${s}`).join('\n')}
-CTA: ${anguloObj.cta}`;
+${plantillaTexto}`;
 }
 
 function copyPrompt(){
