@@ -1,10 +1,10 @@
 <!--
   PEGA TODO ESTE ARCHIVO (desde el primer <link> hasta el último </script>)
-  dentro de un widget "HTML" de Elementor Pro.
+  dentro de un widget "HTML" de Elementor Pro, en la PÁGINA 1 (opt-in, la que pide el correo) del funnel.
 
   Antes de publicar, reemplaza:
-  1) PEGA_AQUI_LA_URL_DEL_PDF_DE_WORDPRESS  ->  la URL del PDF subido a Medios
-  2) CONFIG.ENDPOINT (cerca del final, dentro de <script>) -> el action URL de tu proveedor de email
+  1) CONFIG.THANK_YOU_URL (dentro de <script>) -> la URL real de tu página 2 (la de gracias) una vez publicada
+  2) CONFIG.ENDPOINT (dentro de <script>) -> el action URL de tu proveedor de email
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -103,22 +103,6 @@
 
   .trust-line { font-size: 11px; color: var(--ink-dimmer); margin-top: 12px; font-weight: 500; }
 
-  /* DELIVERY (post opt-in) */
-  #deliveryBlock { display: none; }
-  #deliveryBlock.show { display: block; }
-  #optinCardWrap.hide { display: none; }
-  .success-badge {
-    width: 48px; height: 48px; border-radius: 50%; background: var(--accent); color: var(--accent-ink);
-    display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 900; margin: 0 auto 16px;
-  }
-  #deliveryBlock .oc-title { font-size: 16px; }
-  .btn-download {
-    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-    margin-top: 14px; width: 100%; border: none; border-radius: 8px; padding: 16px 20px;
-    background: var(--accent); color: var(--accent-ink); font-size: 15px; font-weight: 800;
-    text-decoration: none; cursor: pointer;
-  }
-
   /* SECTIONS */
   section { padding: 56px 0; border-top: 1px solid var(--border); }
   .section-kicker { font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
@@ -206,16 +190,6 @@
       </div>
     </div>
 
-    <div id="deliveryBlock">
-      <div class="optin-card">
-        <div class="success-badge">✓</div>
-        <div class="oc-title" style="text-align:center;">Listo, tu PDF está aquí</div>
-        <div class="oc-sub" style="text-align:center;">Descárgalo ahora y guárdalo donde lo vayas a encontrar fácil.</div>
-        <a class="btn-download" id="downloadBtn" href="PEGA_AQUI_LA_URL_DEL_PDF_DE_WORDPRESS" download>⬇ Descargar el PDF</a>
-        <div class="trust-line" style="text-align:center;">También llega una copia a tu correo si conectaste tu proveedor de email.</div>
-      </div>
-    </div>
-
     <iframe name="hidden_iframe" style="display:none;"></iframe>
   </section>
 
@@ -268,25 +242,25 @@
     // TODO: pega aquí el form action URL de tu proveedor de email (Mailchimp, ConvertKit, Brevo, Formspree, etc.)
     // Ejemplo Mailchimp: "https://tudominio.us1.list-manage.com/subscribe/post?u=XXXX&id=YYYY"
     // Ejemplo Formspree: "https://formspree.io/f/xxxxxxx"
-    ENDPOINT: ""
+    ENDPOINT: "",
+    // A dónde redirigir después del opt-in. Debe apuntar a gracias.html
+    // (o a la URL real de esa página una vez publicada, ej. "/gracias/").
+    THANK_YOU_URL: "PEGA_AQUI_LA_URL_DE_TU_PAGINA_DE_GRACIAS" // ej: "https://tudominio.com/gracias/"
   };
 
   const form = document.getElementById('optinForm');
+  const fnameInput = document.getElementById('fname');
   const emailInput = document.getElementById('email');
   const emailError = document.getElementById('emailError');
   const submitBtn = document.getElementById('submitBtn');
-  const optinCardWrap = document.getElementById('optinCardWrap');
-  const deliveryBlock = document.getElementById('deliveryBlock');
 
   function isValidEmail(value) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
   }
 
-  function revealDelivery() {
-    optinCardWrap.classList.add('hide');
-    deliveryBlock.classList.add('show');
-    deliveryBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    try { localStorage.setItem('leadEmail', emailInput.value.trim()); } catch (e) {}
+  function goToThankYou() {
+    const params = new URLSearchParams({ n: fnameInput.value.trim() });
+    window.location.href = CONFIG.THANK_YOU_URL + (fnameInput.value.trim() ? '?' + params.toString() : '');
   }
 
   form.addEventListener('submit', function (e) {
@@ -303,23 +277,18 @@
     submitBtn.textContent = 'Enviando...';
 
     if (!CONFIG.ENDPOINT) {
-      // Modo demo: sin proveedor conectado todavía, entrega el PDF igual.
+      // Modo demo: sin proveedor conectado todavía, pasa directo a la página de gracias.
       e.preventDefault();
-      revealDelivery();
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Enviarme las 100 ideas →';
+      goToThankYou();
       return;
     }
 
     // Con proveedor conectado: el formulario se envía a CONFIG.ENDPOINT vía el iframe oculto
-    // (evita que la página navegue fuera). No podemos leer la respuesta cross-origin,
-    // así que mostramos la entrega tras un breve margen para que el POST llegue.
+    // (evita que la página navegue fuera antes de tiempo). No podemos leer la respuesta
+    // cross-origin, así que redirigimos a la página de gracias tras un breve margen
+    // para que el POST llegue a destino.
     form.action = CONFIG.ENDPOINT;
-    setTimeout(function () {
-      revealDelivery();
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Enviarme las 100 ideas →';
-    }, 900);
+    setTimeout(goToThankYou, 900);
   });
 </script>
 
