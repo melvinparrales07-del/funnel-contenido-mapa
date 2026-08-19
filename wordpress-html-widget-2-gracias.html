@@ -8,17 +8,21 @@
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;0,900;1,500;1,600&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #050505;
-    --bg-panel: #0e0e0e;
-    --border: #232323;
-    --ink: #f5f5f2;
-    --ink-dim: #a3a39c;
-    --ink-dimmer: #6c6c66;
-    --accent: #d7ff3f;
-    --accent-ink: #050505;
+    --bg: #0a0908;
+    --bg-panel: #14100c;
+    --border: #2b241b;
+    --ink: #f3efe6;
+    --ink-dim: #a89f8f;
+    --ink-dimmer: #71685a;
+    --gold: #d7ac57;
+    --gold-bright: #f2cc7c;
+    --gold-ink: #17130b;
+    --green: #46cf94;
+    --green-bg: #10251c;
+    --green-border: #204a34;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -38,30 +42,41 @@
   .nav { border-bottom: 1px solid var(--border); padding: 18px 0; }
   .nav .wrap { max-width: 900px; display: flex; align-items: center; justify-content: space-between; }
   .nav .brand { font-weight: 800; font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase; }
-  .nav .brand span { color: var(--accent); }
+  .nav .brand span { color: var(--gold); }
   .nav .tag { font-size: 11px; color: var(--ink-dimmer); font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
 
   /* HERO */
-  .hero { padding: 72px 0 44px; text-align: center; }
+  .hero { position: relative; padding: 72px 0 44px; text-align: center; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; top: -260px; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 600px; border-radius: 50%; pointer-events: none; z-index: 0;
+    background: radial-gradient(circle, rgba(70,207,148,0.16) 0%, rgba(70,207,148,0) 68%);
+  }
+  .hero > * { position: relative; z-index: 1; }
   .success-badge {
-    width: 56px; height: 56px; border-radius: 50%; background: var(--accent); color: var(--accent-ink);
-    display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 900; margin: 0 auto 22px;
+    width: 56px; height: 56px; border-radius: 50%; background: var(--green-bg); border: 1.5px solid var(--green-border); color: var(--green);
+    display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 900; margin: 0 auto 22px;
   }
   .kicker {
-    display: inline-block; font-size: 11.5px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
-    color: var(--accent-ink); background: var(--accent); padding: 6px 14px; border-radius: 30px; margin-bottom: 20px;
+    display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--green); background: var(--green-bg); border: 1px solid var(--green-border); padding: 6px 14px; border-radius: 30px; margin-bottom: 20px;
   }
-  h1 { font-size: clamp(30px, 5.5vw, 46px); font-weight: 900; line-height: 1.08; letter-spacing: -1px; margin: 0 0 16px; }
-  h1 em { font-style: normal; color: var(--accent); }
+  h1 {
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-size: clamp(30px, 5.5vw, 47px); font-weight: 600; line-height: 1.12; letter-spacing: -0.3px; margin: 0 0 16px;
+    text-wrap: balance;
+  }
+  h1 em { font-style: italic; font-weight: 500; color: var(--gold-bright); }
   .lead { font-size: 16.5px; color: var(--ink-dim); line-height: 1.6; max-width: 480px; margin: 0 auto 32px; font-weight: 500; }
 
   .btn-download {
     display: inline-flex; align-items: center; justify-content: center; gap: 8px;
     border: none; border-radius: 8px; padding: 18px 28px; width: 100%; max-width: 360px;
-    background: var(--accent); color: var(--accent-ink); font-size: 15.5px; font-weight: 800;
-    text-decoration: none; cursor: pointer; transition: transform 0.15s ease, opacity 0.15s ease;
+    background: linear-gradient(135deg, var(--gold-bright), var(--gold)); color: var(--gold-ink); font-size: 15.5px; font-weight: 800;
+    text-decoration: none; cursor: pointer; transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 10px 30px -10px rgba(215,172,87,0.55);
   }
-  .btn-download:hover { transform: translateY(-1px); opacity: 0.92; }
+  .btn-download:hover { transform: translateY(-1px); box-shadow: 0 14px 34px -10px rgba(215,172,87,0.7); }
   .trust-line { font-size: 11px; color: var(--ink-dimmer); margin-top: 14px; font-weight: 500; }
 
   /* NEXT STEP */
@@ -71,12 +86,16 @@
   .upsell-card {
     background: var(--bg-panel); border: 1px solid var(--border); border-radius: 16px; padding: 32px 28px; text-align: center;
   }
-  .section-kicker { font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
-  h2 { font-size: clamp(21px, 3.6vw, 27px); font-weight: 900; letter-spacing: -0.4px; margin: 0 0 12px; line-height: 1.2; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .section-kicker { font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  h2 {
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-size: clamp(21px, 3.6vw, 28px); font-weight: 600; letter-spacing: -0.2px; margin: 0 0 12px; line-height: 1.25; max-width: 480px; margin-left: auto; margin-right: auto;
+    text-wrap: balance;
+  }
   .section-sub { color: var(--ink-dim); font-size: 14.5px; line-height: 1.6; margin: 0 auto 22px; max-width: 440px; }
   .btn-secondary {
-    display: inline-block; border: 1.5px solid var(--accent); border-radius: 8px; padding: 14px 24px;
-    color: var(--accent); font-size: 14.5px; font-weight: 800; text-decoration: none;
+    display: inline-block; border: 1.5px solid var(--gold); border-radius: 8px; padding: 14px 24px;
+    color: var(--gold-bright); font-size: 14.5px; font-weight: 800; text-decoration: none;
   }
 
   footer { border-top: 1px solid var(--border); padding: 28px 0 60px; text-align: center; }

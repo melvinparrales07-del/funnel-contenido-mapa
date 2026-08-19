@@ -7,17 +7,21 @@
 <meta name="description" content="Descarga gratis 100 ideas de contenido para construir una marca personal con propósito. Solo déjanos tu correo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;0,900;1,500;1,600&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #050505;
-    --bg-panel: #0e0e0e;
-    --border: #232323;
-    --ink: #f5f5f2;
-    --ink-dim: #a3a39c;
-    --ink-dimmer: #6c6c66;
-    --accent: #d7ff3f;
-    --accent-ink: #050505;
+    --bg: #0a0908;
+    --bg-panel: #14100c;
+    --border: #2b241b;
+    --ink: #f3efe6;
+    --ink-dim: #a89f8f;
+    --ink-dimmer: #71685a;
+    --gold: #d7ac57;
+    --gold-bright: #f2cc7c;
+    --gold-ink: #17130b;
+    --green: #46cf94;
+    --green-bg: #10251c;
+    --green-border: #204a34;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -40,19 +44,27 @@
   }
   .nav .wrap { max-width: 900px; display: flex; align-items: center; justify-content: space-between; }
   .nav .brand { font-weight: 800; font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase; }
-  .nav .brand span { color: var(--accent); }
+  .nav .brand span { color: var(--gold); }
   .nav .tag { font-size: 11px; color: var(--ink-dimmer); font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
 
   /* HERO */
-  .hero { padding: 64px 0 40px; text-align: center; }
+  .hero { position: relative; padding: 64px 0 40px; text-align: center; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; top: -280px; left: 50%; transform: translateX(-50%);
+    width: 640px; height: 640px; border-radius: 50%; pointer-events: none; z-index: 0;
+    background: radial-gradient(circle, rgba(215,172,87,0.20) 0%, rgba(215,172,87,0) 68%);
+  }
+  .hero > * { position: relative; z-index: 1; }
   .kicker {
-    display: inline-block; font-size: 11.5px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
-    color: var(--accent-ink); background: var(--accent); padding: 6px 14px; border-radius: 30px; margin-bottom: 24px;
+    display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--gold-bright); background: transparent; border: 1px solid var(--gold); padding: 6px 14px; border-radius: 30px; margin-bottom: 26px;
   }
   h1 {
-    font-size: clamp(32px, 6vw, 52px); font-weight: 900; line-height: 1.06; letter-spacing: -1px; margin: 0 0 20px;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-size: clamp(32px, 6vw, 54px); font-weight: 600; line-height: 1.1; letter-spacing: -0.3px; margin: 0 0 20px;
+    text-wrap: balance;
   }
-  h1 em { font-style: normal; color: var(--accent); }
+  h1 em { font-style: italic; font-weight: 500; color: var(--gold-bright); }
   .lead {
     font-size: 17px; color: var(--ink-dim); line-height: 1.6; max-width: 540px; margin: 0 auto 36px; font-weight: 500;
   }
@@ -60,16 +72,16 @@
   /* MOCKUP */
   .mockup { margin: 0 auto 36px; max-width: 260px; position: relative; }
   .mockup .cover {
-    background: linear-gradient(155deg, #1a1a1a 0%, #0a0a0a 70%);
+    background: linear-gradient(155deg, #1c1712 0%, #0a0807 70%);
     border: 1px solid var(--border);
     border-radius: 10px;
     aspect-ratio: 3/4;
     padding: 22px 18px;
     display: flex; flex-direction: column; justify-content: space-between;
-    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.02);
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.7), 0 0 0 1px rgba(215,172,87,0.05);
     transform: rotate(-3deg);
   }
-  .mockup .cover .num { font-size: 44px; font-weight: 900; color: var(--accent); line-height: 1; }
+  .mockup .cover .num { font-family: 'Fraunces', Georgia, serif; font-size: 46px; font-weight: 600; color: var(--gold-bright); line-height: 1; }
   .mockup .cover .desc { font-size: 12px; font-weight: 700; line-height: 1.4; }
   .mockup .cover .foot { font-size: 9px; color: var(--ink-dimmer); font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
 
@@ -84,28 +96,33 @@
   .field { text-align: left; }
   .field label { display: block; font-size: 11px; font-weight: 700; color: var(--ink-dim); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
   .field input {
-    width: 100%; background: #050505; border: 1.5px solid var(--border); color: var(--ink);
+    width: 100%; background: #0a0908; border: 1.5px solid var(--border); color: var(--ink);
     border-radius: 8px; padding: 13px 14px; font-size: 14.5px; font-family: inherit; font-weight: 500;
   }
-  .field input:focus { outline: none; border-color: var(--accent); }
+  .field input:focus { outline: none; border-color: var(--gold); }
   .field input::placeholder { color: var(--ink-dimmer); }
-  .error-msg { font-size: 11.5px; color: #ff6b6b; margin-top: 4px; display: none; font-weight: 600; }
+  .error-msg { font-size: 11.5px; color: #e2775f; margin-top: 4px; display: none; font-weight: 600; }
 
   .btn-cta {
     margin-top: 6px; width: 100%; border: none; border-radius: 8px; padding: 16px 20px;
-    background: var(--accent); color: var(--accent-ink); font-size: 15px; font-weight: 800;
-    cursor: pointer; letter-spacing: 0.2px; transition: transform 0.15s ease, opacity 0.15s ease;
+    background: linear-gradient(135deg, var(--gold-bright), var(--gold)); color: var(--gold-ink); font-size: 15px; font-weight: 800;
+    cursor: pointer; letter-spacing: 0.2px; transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 10px 30px -10px rgba(215,172,87,0.55);
   }
-  .btn-cta:hover { transform: translateY(-1px); opacity: 0.92; }
+  .btn-cta:hover { transform: translateY(-1px); box-shadow: 0 14px 34px -10px rgba(215,172,87,0.7); }
   .btn-cta:active { transform: translateY(0); }
-  .btn-cta:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+  .btn-cta:disabled { opacity: 0.6; cursor: not-allowed; transform: none; box-shadow: none; }
 
   .trust-line { font-size: 11px; color: var(--ink-dimmer); margin-top: 12px; font-weight: 500; }
 
   /* SECTIONS */
   section { padding: 56px 0; border-top: 1px solid var(--border); }
-  .section-kicker { font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
-  h2 { font-size: clamp(24px, 4vw, 32px); font-weight: 900; letter-spacing: -0.5px; margin: 0 0 14px; line-height: 1.15; }
+  .section-kicker { font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  h2 {
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-size: clamp(24px, 4vw, 33px); font-weight: 600; letter-spacing: -0.2px; margin: 0 0 14px; line-height: 1.2;
+    text-wrap: balance;
+  }
   .section-sub { color: var(--ink-dim); font-size: 15px; line-height: 1.6; margin-bottom: 32px; max-width: 560px; }
 
   .cat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -114,13 +131,13 @@
     border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; background: var(--bg-panel);
     display: flex; align-items: flex-start; gap: 10px;
   }
-  .cat-item .n { font-size: 12px; font-weight: 900; color: var(--accent-ink); background: var(--accent); border-radius: 50%; width: 22px; height: 22px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+  .cat-item .n { font-family: 'Fraunces', Georgia, serif; font-size: 12px; font-weight: 700; color: var(--gold-ink); background: var(--gold); border-radius: 50%; width: 22px; height: 22px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
   .cat-item .t { font-size: 13.5px; font-weight: 700; line-height: 1.4; }
 
   .for-list { display: flex; flex-direction: column; gap: 0; }
   .for-item { display: flex; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
   .for-item:last-child { border-bottom: none; }
-  .for-item .mark { color: var(--accent); font-weight: 900; font-size: 16px; flex-shrink: 0; }
+  .for-item .mark { color: var(--gold); font-weight: 900; font-size: 16px; flex-shrink: 0; }
   .for-item p { margin: 0; font-size: 14.5px; color: var(--ink-dim); line-height: 1.55; }
   .for-item strong { color: var(--ink); }
 
