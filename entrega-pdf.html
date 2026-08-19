@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>100 ideas de contenido para tu marca personal — Recurso gratuito</title>
+<meta name="description" content="Descarga gratis 100 ideas de contenido para construir una marca personal con propósito. Solo déjanos tu correo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #050505;
+    --bg-panel: #0e0e0e;
+    --border: #232323;
+    --ink: #f5f5f2;
+    --ink-dim: #a3a39c;
+    --ink-dimmer: #6c6c66;
+    --accent: #d7ff3f;
+    --accent-ink: #050505;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+
+  /* NAV */
+  .nav {
+    border-bottom: 1px solid var(--border);
+    padding: 18px 0;
+  }
+  .nav .wrap { max-width: 900px; display: flex; align-items: center; justify-content: space-between; }
+  .nav .brand { font-weight: 800; font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase; }
+  .nav .brand span { color: var(--accent); }
+  .nav .tag { font-size: 11px; color: var(--ink-dimmer); font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
+
+  /* HERO */
+  .hero { padding: 64px 0 40px; text-align: center; }
+  .kicker {
+    display: inline-block; font-size: 11.5px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--accent-ink); background: var(--accent); padding: 6px 14px; border-radius: 30px; margin-bottom: 24px;
+  }
+  h1 {
+    font-size: clamp(32px, 6vw, 52px); font-weight: 900; line-height: 1.06; letter-spacing: -1px; margin: 0 0 20px;
+  }
+  h1 em { font-style: normal; color: var(--accent); }
+  .lead {
+    font-size: 17px; color: var(--ink-dim); line-height: 1.6; max-width: 540px; margin: 0 auto 36px; font-weight: 500;
+  }
+
+  /* MOCKUP */
+  .mockup { margin: 0 auto 36px; max-width: 260px; position: relative; }
+  .mockup .cover {
+    background: linear-gradient(155deg, #1a1a1a 0%, #0a0a0a 70%);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    aspect-ratio: 3/4;
+    padding: 22px 18px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.02);
+    transform: rotate(-3deg);
+  }
+  .mockup .cover .num { font-size: 44px; font-weight: 900; color: var(--accent); line-height: 1; }
+  .mockup .cover .desc { font-size: 12px; font-weight: 700; line-height: 1.4; }
+  .mockup .cover .foot { font-size: 9px; color: var(--ink-dimmer); font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
+
+  /* FORM */
+  .optin-card {
+    background: var(--bg-panel); border: 1px solid var(--border); border-radius: 16px;
+    padding: 28px 24px; max-width: 440px; margin: 0 auto;
+  }
+  .optin-card .oc-title { font-size: 14px; font-weight: 800; margin-bottom: 4px; }
+  .optin-card .oc-sub { font-size: 12.5px; color: var(--ink-dimmer); margin-bottom: 18px; }
+  form#optinForm { display: flex; flex-direction: column; gap: 10px; }
+  .field { text-align: left; }
+  .field label { display: block; font-size: 11px; font-weight: 700; color: var(--ink-dim); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .field input {
+    width: 100%; background: #050505; border: 1.5px solid var(--border); color: var(--ink);
+    border-radius: 8px; padding: 13px 14px; font-size: 14.5px; font-family: inherit; font-weight: 500;
+  }
+  .field input:focus { outline: none; border-color: var(--accent); }
+  .field input::placeholder { color: var(--ink-dimmer); }
+  .error-msg { font-size: 11.5px; color: #ff6b6b; margin-top: 4px; display: none; font-weight: 600; }
+
+  .btn-cta {
+    margin-top: 6px; width: 100%; border: none; border-radius: 8px; padding: 16px 20px;
+    background: var(--accent); color: var(--accent-ink); font-size: 15px; font-weight: 800;
+    cursor: pointer; letter-spacing: 0.2px; transition: transform 0.15s ease, opacity 0.15s ease;
+  }
+  .btn-cta:hover { transform: translateY(-1px); opacity: 0.92; }
+  .btn-cta:active { transform: translateY(0); }
+  .btn-cta:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+  .trust-line { font-size: 11px; color: var(--ink-dimmer); margin-top: 12px; font-weight: 500; }
+
+  /* DELIVERY (post opt-in) */
+  #deliveryBlock { display: none; }
+  #deliveryBlock.show { display: block; }
+  #optinCardWrap.hide { display: none; }
+  .success-badge {
+    width: 48px; height: 48px; border-radius: 50%; background: var(--accent); color: var(--accent-ink);
+    display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 900; margin: 0 auto 16px;
+  }
+  #deliveryBlock .oc-title { font-size: 16px; }
+  .btn-download {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    margin-top: 14px; width: 100%; border: none; border-radius: 8px; padding: 16px 20px;
+    background: var(--accent); color: var(--accent-ink); font-size: 15px; font-weight: 800;
+    text-decoration: none; cursor: pointer;
+  }
+
+  /* SECTIONS */
+  section { padding: 56px 0; border-top: 1px solid var(--border); }
+  .section-kicker { font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  h2 { font-size: clamp(24px, 4vw, 32px); font-weight: 900; letter-spacing: -0.5px; margin: 0 0 14px; line-height: 1.15; }
+  .section-sub { color: var(--ink-dim); font-size: 15px; line-height: 1.6; margin-bottom: 32px; max-width: 560px; }
+
+  .cat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (max-width: 560px) { .cat-grid { grid-template-columns: 1fr; } }
+  .cat-item {
+    border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; background: var(--bg-panel);
+    display: flex; align-items: flex-start; gap: 10px;
+  }
+  .cat-item .n { font-size: 12px; font-weight: 900; color: var(--accent-ink); background: var(--accent); border-radius: 50%; width: 22px; height: 22px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+  .cat-item .t { font-size: 13.5px; font-weight: 700; line-height: 1.4; }
+
+  .for-list { display: flex; flex-direction: column; gap: 0; }
+  .for-item { display: flex; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+  .for-item:last-child { border-bottom: none; }
+  .for-item .mark { color: var(--accent); font-weight: 900; font-size: 16px; flex-shrink: 0; }
+  .for-item p { margin: 0; font-size: 14.5px; color: var(--ink-dim); line-height: 1.55; }
+  .for-item strong { color: var(--ink); }
+
+  .final-cta { text-align: center; padding: 64px 0 72px; }
+  .final-cta h2 { max-width: 480px; margin: 0 auto 14px; }
+  .final-cta .section-sub { margin-left: auto; margin-right: auto; }
+
+  footer { border-top: 1px solid var(--border); padding: 28px 0 60px; text-align: center; }
+  footer p { font-size: 11.5px; color: var(--ink-dimmer); margin: 4px 0; line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="wrap">
+    <div class="brand">100 <span>Ideas</span> de Contenido</div>
+    <div class="tag">Recurso gratuito</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section class="hero" style="border-top:none; padding-top:64px;">
+    <span class="kicker">PDF gratuito · Descarga inmediata</span>
+    <h1>100 ideas de contenido para construir una <em>marca personal</em> con propósito.</h1>
+    <p class="lead">Deja de mirar la pantalla en blanco preguntándote qué publicar hoy. Guarda este PDF, ábrelo cuando lo necesites y ten siempre una idea lista para tu próximo reel, carrusel o historia.</p>
+
+    <div class="mockup">
+      <div class="cover">
+        <div>
+          <div class="num">100</div>
+          <div class="desc">ideas de contenido<br>para marca personal</div>
+        </div>
+        <div class="foot">PDF · 6 páginas</div>
+      </div>
+    </div>
+
+    <div id="optinCardWrap">
+      <div class="optin-card">
+        <div class="oc-title">Recibe el PDF gratis ahora</div>
+        <div class="oc-sub">Ingresa tu correo y te lo enviamos al instante.</div>
+        <!--
+          CÓMO CONECTAR TU SERVICIO DE EMAIL:
+          1) Abajo en <script>, busca CONFIG.ENDPOINT.
+          2) Pega ahí el "form action URL" de tu proveedor:
+             - Mailchimp: Audience > Signup forms > Embedded forms → copia la URL del atributo action del <form>.
+             - ConvertKit/Kit: Grow > Landing Pages & Forms → copia la action URL del formulario.
+             - Brevo / ActiveCampaign / Systeme.io: en el editor de formulario, copia la URL de acción (action) del <form> embebido.
+             - Formspree: crea un form en formspree.io y pega tu endpoint (https://formspree.io/f/xxxxxxx).
+          3) Si tu proveedor exige nombres de campo distintos a "email"/"name" (ej. Mailchimp usa EMAIL y FNAME),
+             cambia los atributos name="" de los inputs más abajo para que coincidan.
+          4) Mientras CONFIG.ENDPOINT esté vacío, el formulario funciona en modo demo (no envía a ningún lado)
+             pero sí entrega el PDF, para que puedas probar el flujo completo.
+        -->
+        <form id="optinForm" method="POST" target="hidden_iframe" novalidate>
+          <div class="field">
+            <label for="fname">Nombre</label>
+            <input type="text" id="fname" name="name" placeholder="Tu nombre" autocomplete="given-name">
+          </div>
+          <div class="field">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="tucorreo@email.com" autocomplete="email" required>
+            <div class="error-msg" id="emailError">Ingresa un correo válido para continuar.</div>
+          </div>
+          <button type="submit" class="btn-cta" id="submitBtn">Enviarme las 100 ideas →</button>
+        </form>
+        <div class="trust-line">🔒 Sin spam. Tu correo está seguro y puedes darte de baja cuando quieras.</div>
+      </div>
+    </div>
+
+    <div id="deliveryBlock">
+      <div class="optin-card">
+        <div class="success-badge">✓</div>
+        <div class="oc-title" style="text-align:center;">Listo, tu PDF está aquí</div>
+        <div class="oc-sub" style="text-align:center;">Descárgalo ahora y guárdalo donde lo vayas a encontrar fácil.</div>
+        <a class="btn-download" id="downloadBtn" href="assets/100-ideas-contenido-marca-personal.pdf" download>⬇ Descargar el PDF</a>
+        <div class="trust-line" style="text-align:center;">También llega una copia a tu correo si conectaste tu proveedor de email.</div>
+      </div>
+    </div>
+
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
+  </section>
+
+  <section>
+    <div class="section-kicker">Qué vas a encontrar adentro</div>
+    <h2>100 ideas organizadas en 10 categorías, listas para usar.</h2>
+    <p class="section-sub">Nada de fórmulas genéricas. Ideas pensadas para contar tu historia, educar, mostrar autoridad, vender y conectar con tu audiencia — sin sonar forzada.</p>
+    <div class="cat-grid">
+      <div class="cat-item"><span class="n">1</span><span class="t">Contar tu historia</span></div>
+      <div class="cat-item"><span class="n">2</span><span class="t">Educar sobre marca personal</span></div>
+      <div class="cat-item"><span class="n">3</span><span class="t">Hablar de contenido</span></div>
+      <div class="cat-item"><span class="n">4</span><span class="t">Mostrar autoridad</span></div>
+      <div class="cat-item"><span class="n">5</span><span class="t">Mentalidad emprendedora</span></div>
+      <div class="cat-item"><span class="n">6</span><span class="t">Vender desde tu marca personal</span></div>
+      <div class="cat-item"><span class="n">7</span><span class="t">Conectar con tu audiencia</span></div>
+      <div class="cat-item"><span class="n">8</span><span class="t">Romper creencias limitantes</span></div>
+      <div class="cat-item"><span class="n">9</span><span class="t">Contenido tipo "errores"</span></div>
+      <div class="cat-item"><span class="n">10</span><span class="t">Contenido con CTA</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-kicker">Para quién es</div>
+    <h2>Este PDF es para ti si...</h2>
+    <div class="for-list">
+      <div class="for-item"><span class="mark">→</span><p><strong>Te sientas frente a la pantalla y no sabes qué publicar</strong> aunque tienes mil cosas que decir.</p></div>
+      <div class="for-item"><span class="mark">→</span><p><strong>Publicas seguido pero no ves resultados</strong> — ni conversación, ni clientes, solo likes.</p></div>
+      <div class="for-item"><span class="mark">→</span><p><strong>Quieres construir una marca personal con propósito</strong>, no solo llenar un calendario de contenido.</p></div>
+      <div class="for-item"><span class="mark">→</span><p><strong>Sabes que tienes algo de valor que enseñar</strong>, pero no sabes cómo convertirlo en contenido que conecte.</p></div>
+    </div>
+  </section>
+
+  <section class="final-cta" style="padding-bottom: 40px;">
+    <div class="section-kicker" style="text-align:center;">Empieza ahora</div>
+    <h2>Tu próxima idea de contenido está a un correo de distancia.</h2>
+    <p class="section-sub">Sube y deja tu correo para descargar el PDF gratis.</p>
+    <a href="#optinCardWrap" class="btn-cta" style="display:inline-block; text-decoration:none; max-width:320px;">Quiero mis 100 ideas →</a>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026. Recurso gratuito. Reproducción, copia o redistribución sin autorización no permitida.</p>
+  </div>
+</footer>
+
+<script>
+  const CONFIG = {
+    // TODO: pega aquí el form action URL de tu proveedor de email (Mailchimp, ConvertKit, Brevo, Formspree, etc.)
+    // Ejemplo Mailchimp: "https://tudominio.us1.list-manage.com/subscribe/post?u=XXXX&id=YYYY"
+    // Ejemplo Formspree: "https://formspree.io/f/xxxxxxx"
+    ENDPOINT: ""
+  };
+
+  const form = document.getElementById('optinForm');
+  const emailInput = document.getElementById('email');
+  const emailError = document.getElementById('emailError');
+  const submitBtn = document.getElementById('submitBtn');
+  const optinCardWrap = document.getElementById('optinCardWrap');
+  const deliveryBlock = document.getElementById('deliveryBlock');
+
+  function isValidEmail(value) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  }
+
+  function revealDelivery() {
+    optinCardWrap.classList.add('hide');
+    deliveryBlock.classList.add('show');
+    deliveryBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    try { localStorage.setItem('leadEmail', emailInput.value.trim()); } catch (e) {}
+  }
+
+  form.addEventListener('submit', function (e) {
+    const email = emailInput.value.trim();
+
+    if (!isValidEmail(email)) {
+      e.preventDefault();
+      emailError.style.display = 'block';
+      emailInput.focus();
+      return;
+    }
+    emailError.style.display = 'none';
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+
+    if (!CONFIG.ENDPOINT) {
+      // Modo demo: sin proveedor conectado todavía, entrega el PDF igual.
+      e.preventDefault();
+      revealDelivery();
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Enviarme las 100 ideas →';
+      return;
+    }
+
+    // Con proveedor conectado: el formulario se envía a CONFIG.ENDPOINT vía el iframe oculto
+    // (evita que la página navegue fuera). No podemos leer la respuesta cross-origin,
+    // así que mostramos la entrega tras un breve margen para que el POST llegue.
+    form.action = CONFIG.ENDPOINT;
+    setTimeout(function () {
+      revealDelivery();
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Enviarme las 100 ideas →';
+    }, 900);
+  });
+</script>
+
+</body>
+</html>
