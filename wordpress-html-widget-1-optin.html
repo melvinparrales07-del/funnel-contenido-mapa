@@ -70,21 +70,18 @@
     font-size: 17px; color: var(--ink-dim); line-height: 1.6; max-width: 540px; margin: 0 auto 36px; font-weight: 500;
   }
 
-  /* MOCKUP */
-  .mockup { margin: 0 auto 36px; max-width: 260px; position: relative; }
-  .mockup .cover {
-    background: linear-gradient(155deg, #1c1712 0%, #0a0807 70%);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    aspect-ratio: 3/4;
-    padding: 22px 18px;
-    display: flex; flex-direction: column; justify-content: space-between;
-    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.7), 0 0 0 1px rgba(215,172,87,0.05);
-    transform: rotate(-3deg);
+  /* MOCKUP — imagen a sangre completa, difuminada en los bordes para que
+     se sienta parte del fondo en vez de una foto pegada en una caja. */
+  .mockup {
+    width: 100vw; max-width: 100vw;
+    margin: 10px calc(50% - 50vw) 38px;
+    position: relative;
   }
-  .mockup .cover .num { font-family: 'Fraunces', Georgia, serif; font-size: 46px; font-weight: 600; color: var(--gold-bright); line-height: 1; }
-  .mockup .cover .desc { font-size: 12px; font-weight: 700; line-height: 1.4; }
-  .mockup .cover .foot { font-size: 9px; color: var(--ink-dimmer); font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
+  .mockup-image {
+    display: block; width: 100%; height: auto;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 16%, black 80%, transparent 100%);
+            mask-image: linear-gradient(to bottom, transparent 0%, black 16%, black 80%, transparent 100%);
+  }
 
   /* FORM */
   .optin-card {
@@ -165,13 +162,13 @@
     <p class="lead">Deja de mirar la pantalla en blanco preguntándote qué publicar hoy. Guarda este PDF, ábrelo cuando lo necesites y ten siempre una idea lista para tu próximo reel, carrusel o historia.</p>
 
     <div class="mockup">
-      <div class="cover">
-        <div>
-          <div class="num">100</div>
-          <div class="desc">ideas de contenido<br>para marca personal</div>
-        </div>
-        <div class="foot">PDF · 6 páginas</div>
-      </div>
+      <img
+        src="https://melvinparrales.com/wp-content/uploads/2026/08/a_dark_dramatic_product_mockup_scene_overall_a_s.png"
+        alt="100 ideas de contenido para construir una marca personal con propósito"
+        class="mockup-image"
+        loading="eager"
+        fetchpriority="high"
+      >
     </div>
 
     <div id="optinCardWrap">
