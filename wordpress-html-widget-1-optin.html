@@ -62,12 +62,16 @@
   }
   h1 {
     font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
-    font-size: clamp(32px, 6vw, 54px); font-weight: 600; line-height: 1.1; letter-spacing: -0.3px; margin: 0 0 20px;
+    font-size: clamp(28px, 6vw, 54px); font-weight: 600; line-height: 1.1; letter-spacing: -0.3px; margin: 0 0 20px;
     text-wrap: balance;
   }
   h1 em { font-style: italic; font-weight: 500; color: var(--gold-bright); }
   .lead {
     font-size: 17px; color: var(--ink-dim); line-height: 1.6; max-width: 540px; margin: 0 auto 36px; font-weight: 500;
+  }
+  @media (max-width: 480px) {
+    h1 { font-size: 24px; line-height: 1.25; }
+    .lead { font-size: 14.5px; }
   }
 
   /* MOCKUP — difuminada en los bordes para que se sienta parte del fondo
@@ -160,7 +164,7 @@
   <section class="hero" style="border-top:none; padding-top:64px;">
     <span class="kicker">PDF gratuito · Descarga inmediata</span>
     <h1>100 ideas de contenido para construir una <em>marca personal</em> con propósito.</h1>
-    <p class="lead">Deja de mirar la pantalla en blanco preguntándote qué publicar hoy. Guarda este PDF, ábrelo cuando lo necesites y ten siempre una idea lista para tu próximo reel, carrusel o historia.</p>
+    <p class="lead">Deja de mirar la pantalla en blanco. Guarda este PDF y ten siempre una idea lista para tu próximo reel, carrusel o historia.</p>
 
     <div class="mockup">
       <img
