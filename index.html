@@ -399,7 +399,7 @@
 <script>
 const ANGULOS = {
   atraccion: [
-    { id:'viral', name:'Ángulo viral', desc:'Gancho mainstream sobre un tema amplio, con demora y payoff.', cta:'"Seguime" o "seguime y te mando [recurso]"',
+    { id:'viral', name:'Viral', desc:'Gancho mainstream sobre un tema amplio, con demora y payoff. Fase: Alcance.', cta:'"Seguime" o "seguime y te mando [recurso]"',
       steps:[
         'Gancho mainstream: institución + término técnico/nombre impactante',
         'Demora: acción habitual vs. estado óptimo del sistema',
@@ -407,12 +407,8 @@ const ANGULOS = {
         'Payoff: causa real revelada (no la obvia)',
         'CTA: acción correcta en el momento trigger específico'
       ],
-      template:'Nunca más vas a [COMPORTAMIENTO COMÚN NEGATIVO] después de escuchar esto. [INSTITUCIÓN] lo llama [TÉRMINO TÉCNICO/NOMBRE IMPACTANTE]. Cada vez que [ACCIÓN HABITUAL] tu [PARTE DEL SISTEMA] ya [ESTADO ÓPTIMO], pero [ACCIÓN CONTRAPRODUCENTE]. Y eso es justamente lo que [INSTITUCIÓN] descubrieron: cuando [ACCIÓN], tu [SISTEMA] empieza [PROCESO] que [CONSECUENCIA]. Y si [ACCIÓN HABITUAL], estás [CONSECUENCIA] y vas a [RESULTADO NEGATIVO PEOR QUE EL PROBLEMA ORIGINAL]. Ese [SÍNTOMA QUE SIENTEN] no es por [CAUSA OBVIA], sino por [CAUSA REAL RECIÉN REVELADA]. Así que [MOMENTO ESPECÍFICO], cuando [TRIGGER], [ACCIÓN CORRECTA] y vas a terminar agradeciendo a [INSTITUCIÓN].' }
-  ],
-  nutricion: [
-    { id:'vinculacion', name:'Vinculación', desc:'Libre, sin plantilla fija. Compartís algo tuyo.', cta:'Opcional — puede no llevar CTA de recurso',
-      steps:['Contar algo tuyo: valores, historia personal, b-rolls de tu día a día (es libre, no tiene estructura fija)']},
-    { id:'errores', name:'Errores', desc:'Posicionás una práctica común como error y das la solución.', cta:'"Comentá [palabra] y te lo envío"',
+      template:'Nunca más vas a [COMPORTAMIENTO COMÚN NEGATIVO] después de escuchar esto. [INSTITUCIÓN] lo llama [TÉRMINO TÉCNICO/NOMBRE IMPACTANTE]. Cada vez que [ACCIÓN HABITUAL] tu [PARTE DEL SISTEMA] ya [ESTADO ÓPTIMO], pero [ACCIÓN CONTRAPRODUCENTE]. Y eso es justamente lo que [INSTITUCIÓN] descubrieron: cuando [ACCIÓN], tu [SISTEMA] empieza [PROCESO] que [CONSECUENCIA]. Y si [ACCIÓN HABITUAL], estás [CONSECUENCIA] y vas a [RESULTADO NEGATIVO PEOR QUE EL PROBLEMA ORIGINAL]. Ese [SÍNTOMA QUE SIENTEN] no es por [CAUSA OBVIA], sino por [CAUSA REAL RECIÉN REVELADA]. Así que [MOMENTO ESPECÍFICO], cuando [TRIGGER], [ACCIÓN CORRECTA] y vas a terminar agradeciendo a [INSTITUCIÓN].' },
+    { id:'errores', name:'Errores', desc:'Posicionás una práctica común como error y das la solución. Fase: Captar atención.', cta:'"Comentá [palabra] y te lo envío"',
       steps:[
         'Gancho: práctica común de tu audiencia → posicionarla como error',
         'Justificación del error',
@@ -422,24 +418,63 @@ const ANGULOS = {
         'Recurso gratuito + CTA'
       ],
       template:'Deja de [PRÁCTICA COMÚN QUE TU AUDIENCIA HACE]. Porque [CONSECUENCIA NEGATIVA]. [JUSTIFICACIÓN DEL ERROR] [SOLUCIÓN ÚNICA JUSTIFICADA] Esto es exactamente lo que hizo [NOMBRE DEL CLIENTE], que pasó de [SITUACIÓN ANTES] a [SITUACIÓN DESPUÉS] y [RESULTADO ESPECÍFICO MEDIBLE] en solo [TIEMPO]. Y lo más interesante es que [OBJECIÓN 1 QUE SUPERÓ], [OBJECIÓN 2], y [OBJECIÓN 3]. Cómo [PASO CLAVE 1], cómo [PASO CLAVE 2] y cómo [PASO CLAVE 3] lo explico en [NOMBRE DEL RECURSO GRATUITO], y cómo tú, [IDENTIFICADOR DE AUDIENCIA], puedes [TRANSFORMACIÓN PROMETIDA]. Comenta \'[PALABRA]\' y te lo envío al instante antes de que [URGENCIA/ESCASEZ].' },
-    { id:'epifania', name:'Epifanía (gancho Xavier)', desc:'Leés la mente del avatar con una frustración muy específica.', cta:'"Comentá [palabra] y te lo envío"',
+    { id:'dolor_emocional', name:'Dolor Emocional', desc:'Nombrás un dolor emocional específico y universal para detener el scroll. Fase: Captar atención.', cta:'"Seguime"',
       steps:[
-        'Leé la mente del avatar: frustración muy específica (no genérica)',
-        'Desarrollá el problema: por qué eso es un problema',
-        'Cambiá la perspectiva',
-        'Prueba → Recurso'
+        'Gancho: nombrás el dolor emocional específico en segunda persona ("te sientes...")',
+        'Validación: reconocés que es real y común, sin sermón',
+        'Contexto breve de por qué pasa',
+        'Cierre abierto (sin resolver todo) que invita a seguir viendo tu contenido'
       ],
-      template:'[SITUACIÓN ESPECÍFICA QUE VIVE TU PROSPECTO] porque [PRÁCTICA COMÚN]. [RAZÓN REAL DEL PROBLEMA]. Y esto sucede porque [CAUSA RAÍZ]. Lo que tienes que hacer es [NUEVA SOLUCIÓN]. Porque [JUSTIFICACIÓN LÓGICA]. [YO / NOMBRE DE CLIENTE] estaba [SITUACIÓN ANTES]. Y después de aplicar esto [RESULTADO ESPECÍFICO + TIEMPO]. Tengo [TIPO DE RECURSO] donde te muestro [BENEFICIO PRINCIPAL]. Para que puedas [RESULTADO]. Comenta \'[PALABRA]\' y te lo envío antes de que [URGENCIA/ESCASEZ].' },
-    { id:'transformacion', name:'Transformación viral', desc:'"Así pasé de X a Y" — tu historia o la de un cliente.', cta:'"Comentá [palabra] y te lo envío"',
+      template:'[DOLOR EMOCIONAL ESPECÍFICO, en segunda persona]. No estás solo/a — le pasa a [IDENTIFICADOR DE AUDIENCIA]. Esto pasa porque [RAZÓN BREVE, sin culpar a la persona]. [CIERRE ABIERTO que deja curiosidad, sin dar la solución completa todavía].' },
+    { id:'controversia', name:'Controversia', desc:'Afirmación que genera debate para maximizar alcance vía comentarios. Fase: Debate/Alcance.', cta:'"Seguime" — el debate en comentarios genera el alcance',
       steps:[
-        'Gancho storytelling: "así pasé de X a Y"',
-        'Situación pasada (vívida, interna y externa)',
-        'Situación actual (vívida)',
-        '3 pasos novedosos y detallados (cuanto más único, mejor)',
-        'Inspiración: "si tú también... podés lograrlo"'
+        'Afirmación controvertida o contraintuitiva sobre un tema mainstream de tu nicho',
+        'Justificación breve (no la agotes, dejá que generen debate)',
+        'Cierre firme, sin suavizar la postura'
       ],
-      template:'Así pasé de [SITUACIÓN ACTUAL] a [DESEADA] // Tenía [PROBLEMA QUE RESUENE CON EL AVATAR]. Y estaba pasando por [MOMENTO DIFÍCIL EMOCIONAL]. [DESCRIPCIÓN VÍVIDA DE LA SITUACIÓN PASADA, INTERNA Y EXTERNA] Hoy [DESCRIPCIÓN VÍVIDA DE LA SITUACIÓN ACTUAL]. ¿Qué hice para lograr este cambio? [PASO 1 NOVEDOSO Y DETALLADO] [PASO 2] [PASO 3] Si tienes [SITUACIÓN DEL LECTOR], no hay razón por la cual no puedas [RESULTADO DESEADO].' },
-    { id:'storytelling_adaptado', name:'Storytelling adaptado (viral)', desc:'Adaptás un reel viral real a tu marca: metáfora + reframe + frase memorable.', cta:'Cierre reflexivo — opcional: CTA de recurso si aplica',
+      template:'[AFIRMACIÓN CONTROVERTIDA O CONTRAINTUITIVA sobre un tema mainstream de tu nicho]. [JUSTIFICACIÓN BREVE, sin agotar el argumento]. [CIERRE FIRME que no suaviza la postura].' }
+  ],
+  nutricion: [
+    { id:'prueba_social', name:'Prueba Social', desc:'Resultados tuyos o de un cliente, narrado o en clip. Fase: Confianza.', cta:'"Comentá [palabra] y te cuento el paso a paso"',
+      steps:[
+        'Gancho: qué se logró (el resultado)',
+        'Contexto: qué hacía la persona',
+        'Problema interno + intentos previos',
+        'Proceso de decisión: qué hizo distinto',
+        'Solución: cómo se implementó',
+        'Resultado final con número o tiempo específico',
+        'CTA: comentá por el recurso'
+      ],
+      template:'[RESULTADO LOGRADO, en números o transformación clara]. Así fue como [NOMBRE / YO] pasó de [SITUACIÓN ANTES] a esto. [CONTEXTO: qué hacía antes, qué había intentado sin éxito]. [PROCESO: qué decidió hacer distinto]. [SOLUCIÓN aplicada, en 1-2 líneas]. [RESULTADO final con número/tiempo específico]. Comenta \'[PALABRA]\' y te cuento el paso a paso.' },
+    { id:'vinculacion', name:'Vinculación', desc:'Libre, sin plantilla fija. Compartís algo tuyo. Fase: Conexión.', cta:'Opcional — puede no llevar CTA de recurso',
+      steps:['Contar algo tuyo: valores, historia personal, b-rolls de tu día a día (es libre, no tiene estructura fija)']},
+    { id:'problema', name:'Problema', desc:'Profundizás un problema específico para que se sientan comprendidos antes de dar la solución. Fase: Agitar dolor.', cta:'"Comentá [palabra] y te muestro cómo"',
+      steps:[
+        'Nombrás el problema específico (no genérico)',
+        'Agitás las consecuencias reales de no resolverlo',
+        'Mostrás que entendés por qué sucede (empatía, no juicio)',
+        'Adelantás que hay una salida, sin resolverla del todo',
+        'CTA: comentá por el recurso'
+      ],
+      template:'[PROBLEMA ESPECÍFICO que vive tu audiencia]. Y lo peor no es [SÍNTOMA OBVIO], es [CONSECUENCIA REAL Y MÁS PROFUNDA]. Esto pasa porque [CAUSA, sin culpar a la persona]. Lo bueno es que [ADELANTO DE LA SALIDA, sin resolverlo del todo]. Comenta \'[PALABRA]\' y te muestro cómo.' },
+    { id:'autoridad', name:'Autoridad', desc:'Compartís tus resultados/trayectoria para posicionarte como referente. Fase: Posicionamiento.', cta:'"Comentá [palabra] y te comparto el proceso"',
+      steps:[
+        'Gancho con un resultado o número propio relevante',
+        'Contexto breve de cómo lo lograste (proceso, no solo el resultado)',
+        'Lección o insight aplicable',
+        'CTA: comentá por el recurso relacionado a esa lección'
+      ],
+      template:'[RESULTADO/NÚMERO propio relevante para tu nicho]. Así es como lo logré: [PROCESO BREVE, 2-3 pasos]. La lección más grande fue [INSIGHT PRINCIPAL]. Comenta \'[PALABRA]\' y te comparto el proceso completo.' },
+    { id:'demostracion', name:'Demostración', desc:'Mostrás tu proceso/sistema en acción como prueba de que funciona. Fase: Prueba.', cta:'"Comentá [palabra] y te paso la plantilla"',
+      steps:[
+        'Anuncio de qué vas a mostrar (sin dar el resultado todavía)',
+        'Demo real: pantalla, proceso o sistema paso a paso',
+        'Señalás el detalle clave que hace que funcione',
+        'Cierre con el resultado que produce ese proceso',
+        'CTA: comentá por el recurso/plantilla del proceso'
+      ],
+      template:'Te voy a mostrar [QUÉ VAS A DEMOSTRAR] en vivo. [DEMO: pantalla o proceso paso a paso, mostrando lo real]. La clave está en [DETALLE ESPECÍFICO que la mayoría se salta]. Esto es lo que te permite lograr [RESULTADO]. Comenta \'[PALABRA]\' y te paso la plantilla/proceso completo.' },
+    { id:'storytelling', name:'Storytelling', desc:'Adaptás un reel viral real a tu marca: metáfora + reframe + frase memorable. Fase: Emoción.', cta:'Cierre reflexivo — opcional: CTA de recurso si aplica',
       steps:[
         'Gancho texto en pantalla: pregunta/comentario de un seguidor con el problema específico',
         'Gancho vocal: reconocés que también viviste algo similar (identificación, no sermón)',
@@ -448,31 +483,34 @@ const ANGULOS = {
         'Concepto memorable: una frase corta, contraintuitiva, fácil de citar y compartir',
         'Cierre: reflexión o llamado a la acción que conecta con el concepto memorable'
       ],
-      template:'[NOMBRE], [SITUACIÓN/PROBLEMA ESPECÍFICO QUE VIVE TU AVATAR].\n\nNo sé si aplique, pero yo también [EXPERIENCIA SIMILAR]... y honestamente [GIRO/RESULTADO INESPERADO].\n\n[METÁFORA COTIDIANA QUE ILUSTRA EL PROBLEMA DESDE OTRO ÁNGULO]\n\n[REFRAME: REINTERPRETACIÓN LÓGICA DE POR QUÉ ESO NO ES TAN MALO]\n\n[CONCEPTO MEMORABLE: FRASE CORTA Y CONTRAINTUITIVA]\n\n[CIERRE: REFLEXIÓN O LLAMADO A LA ACCIÓN QUE CONECTA CON EL CONCEPTO MEMORABLE]' }
+      template:'[NOMBRE], [SITUACIÓN/PROBLEMA ESPECÍFICO QUE VIVE TU AVATAR].\n\nNo sé si aplique, pero yo también [EXPERIENCIA SIMILAR]... y honestamente [GIRO/RESULTADO INESPERADO].\n\n[METÁFORA COTIDIANA QUE ILUSTRA EL PROBLEMA DESDE OTRO ÁNGULO]\n\n[REFRAME: REINTERPRETACIÓN LÓGICA DE POR QUÉ ESO NO ES TAN MALO]\n\n[CONCEPTO MEMORABLE: FRASE CORTA Y CONTRAINTUITIVA]\n\n[CIERRE: REFLEXIÓN O LLAMADO A LA ACCIÓN QUE CONECTA CON EL CONCEPTO MEMORABLE]' },
+    { id:'comparacion', name:'Comparación', desc:'Contrastás el modelo/método correcto vs. el incorrecto para diferenciarte. Fase: Diferenciación.', cta:'"Comentá [palabra] y te explico cómo aplicarlo"',
+      steps:[
+        'Nombrás el modelo/práctica común (lo que "todo el mundo hace")',
+        'Contrastás con tu modelo/método (lo que hacés distinto)',
+        'Explicás por qué el tuyo funciona mejor (razón concreta)',
+        'CTA: comentá por el recurso que explica tu método'
+      ],
+      template:'No hagas [MODELO/PRÁCTICA COMÚN], porque [CONSECUENCIA NEGATIVA]. En cambio, [TU MODELO/MÉTODO DISTINTO], porque [RAZÓN CONCRETA POR LA QUE FUNCIONA MEJOR]. Comenta \'[PALABRA]\' y te explico cómo aplicarlo.' },
+    { id:'dudas', name:'Dudas', desc:'Respondés la pregunta más frecuente de tu audiencia de forma directa. Fase: Resolver preguntas.', cta:'"Comentá [palabra] y te lo explico completo"',
+      steps:[
+        'Repetís la pregunta exacta que te hacen (en sus palabras)',
+        'Respondés directo, sin rodeos',
+        'Agregás el matiz o excepción que la mayoría no menciona',
+        'CTA: comentá por el recurso relacionado'
+      ],
+      template:'Me preguntan todo el tiempo: "[PREGUNTA FRECUENTE, tal como te la hacen]". La respuesta corta es [RESPUESTA DIRECTA]. Pero hay un matiz: [EXCEPCIÓN O DETALLE QUE LA MAYORÍA IGNORA]. Comenta \'[PALABRA]\' y te lo explico completo.' }
   ],
   conversion: [
-    { id:'promesa', name:'Promesa', desc:'Llamado directo a tu cliente ideal con escasez legítima.', cta:'"Comentá y te escribo"',
+    { id:'venta_directa', name:'Venta Directa', desc:'Oferta directa a tu audiencia ya nutrida, sin rodeos. Fase: Conversión.', cta:'"Comentá [palabra] y te escribo"',
       steps:[
-        'Gancho de atención + a quién le hablás (cliente ideal)',
-        'Promesa clara del resultado + proceso/mecanismo único',
-        'Escasez legítima: número limitado de personas o plazo',
-        'Tangible: tiempo en el que entregás el resultado',
-        'Prueba (opcional): resultados que estás obteniendo',
-        'CTA: comentá'
+        'Gancho directo a quién le hablás (cliente ideal ya calificado)',
+        'Qué ofrecés y qué resultado promete',
+        'Por qué ahora / por qué vos (mecanismo o prueba breve)',
+        'CTA directo: comentá para trabajar juntos'
       ],
-      template:'Busco X [PERSONA] para llevarlos personalmente a [RESULTADO] en [TIEMPO]. Implementando [PROCESO] que ha generado [PRUEBA SOCIAL]. Comenta "YO" y te cuento cómo funciona.' },
-    { id:'prueba_social', name:'Prueba social', desc:'Resultados tuyos o de un cliente, narrado o en clip.', cta:'"Comentá y te cuento cómo"',
-      pending:'Falta el texto literal de esta plantilla (Marcos la tiene más larga, con estructura de testimonio) — pasámela y la agrego.',
-      steps:[
-        'Gancho: qué se logró (el resultado)',
-        'Contexto: qué hacía la persona',
-        'Problema interno + intentos previos',
-        'Proceso de compra / toma de decisión',
-        'Solución: cómo se implementó',
-        'Resultados: qué logró (interno y externo)',
-        'CTA: comentá para trabajar juntos'
-      ]},
-    { id:'objeciones', name:'Objeciones', desc:'Reconocés y desarmás la objeción más común de tu audiencia.', cta:'"Comentá"',
+      template:'[A QUIÉN LE HABLÁS: cliente ideal específico]. Te ayudo a [RESULTADO PROMETIDO] a través de [TU MÉTODO/MECANISMO]. [PRUEBA BREVE, opcional]. Comenta "[PALABRA]" y te escribo para ver si encajamos.' },
+    { id:'objeciones', name:'Objeciones', desc:'Reconocés y desarmás la objeción más común de tu audiencia. Fase: Eliminar barreras.', cta:'"Comentá"',
       pending:'Falta el texto literal de esta plantilla (Marcos la tiene más larga, con estructura de romper creencias) — pasámela y la agrego.',
       steps:[
         'Gancho: mencionar/reconocer la objeción en primera persona',
@@ -484,15 +522,14 @@ const ANGULOS = {
         'Tu promesa y proceso: beneficios de trabajar con vos',
         'Razón para actuar ahora + CTA'
       ]},
-    { id:'urgencia', name:'Urgencia', desc:'Como promesa pero con escasez de cupos o tiempo al frente.', cta:'"Comentá"',
+    { id:'oportunidad', name:'Oportunidad', desc:'Mostrás un cambio de mercado o ventana limitada para actuar ahora. Fase: Urgencia.', cta:'"Comentá y te cuento cómo aprovecharla"',
       steps:[
-        'Gancho de atención + a quién le hablás',
-        'Promesa + proceso',
-        'Escasez de cupos o tiempo',
-        'Prueba: resultados que estás obteniendo',
-        'CTA: comentá'
+        'Nombrás el cambio/oportunidad del mercado',
+        'Explicás por qué actuar ahora importa (ventana que se cierra)',
+        'Qué pasa si no actuás a tiempo',
+        'CTA: comentá para aprovecharla'
       ],
-      template:'Atención [NICHO] que quieren [RESULTADO] a través de [MÉTODO]. Quedan solo X días antes de que [ESCASEZ]. Comenta "YO" y te escribo. Hemos [PRUEBA SOCIAL].' }
+      template:'[CAMBIO U OPORTUNIDAD EN EL MERCADO que está pasando ahora]. Si actuás ahora, podés [BENEFICIO DE MOVERSE RÁPIDO]. Si esperás, [CONSECUENCIA DE QUEDARSE ATRÁS]. Comenta "[PALABRA]" y te cuento cómo aprovecharla antes de que [ESCASEZ/PLAZO].' }
   ]
 };
 
@@ -513,7 +550,7 @@ const CHECKLIST = [
   { id:'payoff', text:'El payoff/desenlace está al final del video, no en el medio', why:'Si lo das antes, el espectador se va y el algoritmo lo penaliza.' },
   { id:'hook', text:'El gancho dura 2–10s y tiene menos de 15 palabras', why:'Las primeras 3–5 palabras son las que capturan la atención.' },
   { id:'cta', text:'El CTA corresponde a la capa elegida', why:'Atracción=seguime · Nutrición=comentá por recurso · Conversión=comentá para trabajar.' },
-  { id:'magnet', text:'Si es Nutrición o Promesa: el organic magnet ya está definido y listo para entregar', why:'La organic magnet es lo que activa la conversación en comentarios.' },
+  { id:'magnet', text:'Si es Nutrición: el organic magnet ya está definido y listo para entregar', why:'La organic magnet es lo que activa la conversación en comentarios.' },
   { id:'ads', text:'Vas a ponerle ads a esta pieza', why:'Los ads son "esteroides" — evitan depender 100% del algoritmo.' },
   { id:'manychat', text:'ManyChat (o vos manualmente) está listo para responder este comentario específico', why:'Sin esto, el comentario no se convierte en conversación.' }
 ];
